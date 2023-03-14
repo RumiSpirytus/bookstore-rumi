@@ -1,8 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@300;400;500&family=Roboto:wght@300;400;500;700&display=swap');
 
-:root{
-    
-}
 
 *{
     font-family: 'Roboto', sans-serif;
@@ -25,6 +22,8 @@
     --outline-hover: .2rem solid var(--black);
     --purple: rgb(210, 25, 210) ;
     --green: rgb(22, 85, 39) ;
+    --purple2: rgb(177, 21, 177) ;
+    --green2: rgb(80, 192, 110) ;
 }
 
 html{
@@ -36,4 +35,20 @@ html{
 
 body {
     background: #eee;
+}
+.btn {
+    margin-top: 1rem;
+    display: inline-block;
+    padding: .8rem 3rem;
+    font-size: 1.7rem;
+    border-radius: .5rem;
+    border: .2rem solid var(--black);
+    color:var(--black);
+    cursor: pointer;
+    background: none;
+}
+
+.btn:hover{
+    background: var(--green2);
+    color:#fff;
 }
