@@ -44,4 +44,7 @@
     .heading{
         font-size: .5rem;
     }
+    .footer {
+        text-align: center;
+    }
 }
