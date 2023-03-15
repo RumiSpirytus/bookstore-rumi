@@ -36,6 +36,10 @@ html{
 body {
     background: #eee;
 }
+
+section{
+    padding: 2rem 9%;
+}
 .btn {
     margin-top: 1rem;
     display: inline-block;

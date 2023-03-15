@@ -1,0 +1,27 @@
+.home {
+    display: flex;
+    align-items: center;
+    justify-items: center;
+    background: url(../img/banner4.avif) no-repeat;
+    background-position: center;
+    background-size: cover ;
+    padding-top: 27rem;
+    padding-bottom: 10rem;
+}
+
+.home .content{
+    text-align: center;
+    width: 130rem;
+}
+
+.home .content h3{
+    color: #282280;
+    font-size: 3rem;
+}
+
+.home .content p{
+    color: var(--light-color);
+    font-size: 1.7rem;
+    padding: 1rem 0;
+    line-height: 1.8;
+}
