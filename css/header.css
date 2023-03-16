@@ -125,7 +125,7 @@
     font-size: 2rem;
     position: absolute;
     top: 50%;
-    right: 2rem;
+    left: 15em;
     cursor: pointer;
     color: var(--light-color);
     transform: translateY(-50%);
@@ -203,3 +203,4 @@
     right: 2rem;
     transition: .3s linear;
 }
+

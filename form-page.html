@@ -53,35 +53,6 @@
 			</form>
 
 			<div class="shopping-cart">
-				<div class="box">
-					<i class="fas fa-trash"></i>
-					<img src="img/book1.jpg" alt="" />
-					<div class="content">
-						<h3>Book 1</h3>
-						<span class="price">$5/- </span>
-						<span class="quantity">Quantity: 1</span>
-					</div>
-				</div>
-
-				<div class="box">
-					<i class="fas fa-trash"></i>
-					<img src="img/book2.jpg" alt="" />
-					<div class="content">
-						<h3>Book 2</h3>
-						<span class="price">$5/- </span>
-						<span class="quantity">Quantity: 1</span>
-					</div>
-				</div>
-
-				<div class="box">
-					<i class="fas fa-trash"></i>
-					<img src="img/book3.jpg" alt="" />
-					<div class="content">
-						<h3>Book 3</h3>
-						<span class="price">$5/- </span>
-						<span class="quantity">Quantity: 1</span>
-					</div>
-				</div>
 				<div class="total">Total: $15/-</div>
 				<a href="#" class="btn">Checkout</a>
 			</div>
@@ -154,7 +125,7 @@
 			<h1 class="heading">Our <span>Products</span></h1>
 			<div class="swiper product-slider">
 				<div class="swiper-wrapper">
-					<div class="swiper-slide box">
+					<div class="swiper-slide box" id="1">
 						<img src="img/bia-sach1.jpg" alt="" />
 						<h3>Ánh trăng đêm hè</h3>
 						<div class="price">$5</div>
@@ -165,7 +136,7 @@
 							<i class="fas fa-star"></i>
 							<i class="fas fa-star-half-alt"></i>
 						</div>
-						<a href="#" class="btn">Add to cart</a>
+						<div class="btn add-cart-btn">Add to cart</div>
 					</div>
 
 					<div class="swiper-slide box">
@@ -179,7 +150,7 @@
 							<i class="fas fa-star"></i>
 							<i class="fas fa-star-half-alt"></i>
 						</div>
-						<a href="#" class="btn">Add to cart</a>
+						<div class="btn add-cart-btn">Add to cart</div>
 					</div>
 
 					<div class="swiper-slide box">
@@ -193,7 +164,7 @@
 							<i class="fas fa-star"></i>
 							<i class="fas fa-star-half-alt"></i>
 						</div>
-						<a href="#" class="btn">Add to cart</a>
+						<div class="btn add-cart-btn">Add to cart</div>
 					</div>
 
 					<div class="swiper-slide box">
@@ -207,7 +178,7 @@
 							<i class="fas fa-star"></i>
 							<i class="fas fa-star-half-alt"></i>
 						</div>
-						<a href="#" class="btn">Add to cart</a>
+						<div class="btn add-cart-btn">Add to cart</div>
 					</div>
 
 					<div class="swiper-slide box">
@@ -221,9 +192,10 @@
 							<i class="fas fa-star"></i>
 							<i class="fas fa-star-half-alt"></i>
 						</div>
-						<a href="#" class="btn">Add to cart</a>
+						<div class="btn add-cart-btn">Add to cart</div>
 					</div>
 				</div>
+				<!-- <div class="swiper-pagination"></div> -->
 			</div>
 
 			<!-- responsive   -->
@@ -241,7 +213,7 @@
 							<i class="fas fa-star"></i>
 							<i class="fas fa-star-half-alt"></i>
 						</div>
-						<a href="#" class="btn">Add to cart</a>
+						<div class="btn add-cart-btn">Add to cart</div>
 					</div>
 
 					<div class="swiper-slide box">
@@ -255,7 +227,7 @@
 							<i class="fas fa-star"></i>
 							<i class="fas fa-star-half-alt"></i>
 						</div>
-						<a href="#" class="btn">Add to cart</a>
+						<div class="btn add-cart-btn">Add to cart</div>
 					</div>
 
 					<div class="swiper-slide box">
@@ -269,7 +241,7 @@
 							<i class="fas fa-star"></i>
 							<i class="fas fa-star-half-alt"></i>
 						</div>
-						<a href="#" class="btn">Add to cart</a>
+						<div class="btn add-cart-btn">Add to cart</div>
 					</div>
 
 					<div class="swiper-slide box">
@@ -283,7 +255,7 @@
 							<i class="fas fa-star"></i>
 							<i class="fas fa-star-half-alt"></i>
 						</div>
-						<a href="#" class="btn">Add to cart</a>
+						<div class="btn add-cart-btn">Add to cart</div>
 					</div>
 
 					<div class="swiper-slide box">
@@ -297,7 +269,7 @@
 							<i class="fas fa-star"></i>
 							<i class="fas fa-star-half-alt"></i>
 						</div>
-						<a href="#" class="btn">Add to cart</a>
+						<div class="btn add-cart-btn">Add to cart</div>
 					</div>
 				</div>
 			</div>
@@ -477,5 +449,6 @@
 
 		<script src="js/header.js"></script>
 		<script src="js/section.js"></script>
+		<script src="js/cart.js"></script>
 	</body>
 </html>
