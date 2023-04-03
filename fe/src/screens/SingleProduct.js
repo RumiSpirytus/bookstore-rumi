@@ -1,8 +1,8 @@
 import React from "react";
-import Header from "./../components/Header";
+import Header from "../components/Header";
 import Rating from "../components/homeComponents/Rating";
 import { Link } from "react-router-dom";
-import Message from "./../components/LoadingError/Error";
+import Message from "../components/LoadingError/Error";
 import products from "../data/Products";
 
 const SingleProduct = ({ match }) => {
