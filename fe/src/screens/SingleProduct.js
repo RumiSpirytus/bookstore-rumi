@@ -4,7 +4,7 @@ import Rating from "../components/homeComponents/Rating";
 import { Link } from "react-router-dom";
 import Message from "../components/LoadingError/Error";
 import axios from "axios";
-
+//fetch product
 const SingleProduct = ({ match }) => {
   const [product, setProduct] = useState({})
 
@@ -14,7 +14,7 @@ const SingleProduct = ({ match }) => {
       setProduct(data)
     }
     fetchproduct()
-  }, []);
+  }, [match]);
   return (
     <>
       <Header />

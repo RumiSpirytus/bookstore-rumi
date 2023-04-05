@@ -1,18 +1,20 @@
 import express from "express";
-import products from "./data/Products.js";
+import dotenv from "dotenv"
+import connectDatabase from "./config/MongoDB.js";
+import ImportData from "./DataImport.js";
 
+dotenv.config();
+connectDatabase();
 const app = express();
 
+// api 
+app.use("/api/import/", ImportData);
+ 
+app.get("/", (req, res) => 
+{
+    res.send("API is running" );
+});
 
-// load product from server
-app.get("/api/products",(req, res) => {
-    res.json(products);
-})
+const PORT = process.env.PORT || 1000
 
-// single product from server
-app.get("/api/products/:id", (req, res) => {
-    const product = products.find((p) => p._id === req.params.id)
-    res.json(product)
-})
-
-app.listen(5000, console.log("server is running"));
+app.listen(PORT, console.log(`server is running in port ${PORT}`));

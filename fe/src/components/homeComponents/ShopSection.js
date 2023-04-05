@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import Rating from "./Rating";
 import Pagination from "./pagination";
 import axios from "axios"
-
+//fetch products
 const ShopSection = () => {
   const [products, setProducts] = useState([])
 
