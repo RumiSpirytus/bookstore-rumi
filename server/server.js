@@ -8,7 +8,7 @@ connectDatabase();
 const app = express();
 
 // api 
-app.use("/api/import/", ImportData);
+app.use("/api/import", ImportData);
  
 app.get("/", (req, res) => 
 {
