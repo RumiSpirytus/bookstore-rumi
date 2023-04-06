@@ -2,6 +2,7 @@ import express from "express";
 import dotenv from "dotenv"
 import connectDatabase from "./config/MongoDB.js";
 import ImportData from "./DataImport.js";
+import productRoute from "./Routes/ProductRoutes.js";
 
 dotenv.config();
 connectDatabase();
@@ -9,6 +10,7 @@ const app = express();
 
 // api 
 app.use("/api/import", ImportData);
+app.use("/api/products", productRoute);
  
 app.get("/", (req, res) => 
 {
