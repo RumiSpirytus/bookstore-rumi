@@ -1,14 +1,14 @@
 import express from 'express';
-import User from './models/UserModels';
-import users from './data/Users';
+import User from './models/UserModels.js';
+import users from './data/users.js';
 
 const ImportData = express.Router()
 
 
 ImportData.post("/user", async (req, res) => {
     await User.Remove({})
-    const imporUser = await User.insertMany(users)
-    res.send({imporUser});
+    const importUser = await User.insertMany(users)
+    res.send({importUser});
 });
 
 export default ImportData;
