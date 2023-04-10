@@ -55,7 +55,7 @@ const SingleProduct = ({ match }) => {
                   {product.countInStock > 0 ? (
                     <span>In Stock</span>
                   ) : (
-                    <span>unavailable</span>
+                    <span>Unavailable</span>
                   )}
                 </div>
                 <div className="flex-box d-flex justify-content-between align-items-center">
@@ -91,9 +91,9 @@ const SingleProduct = ({ match }) => {
             <h6 className="mb-3">REVIEWS</h6>
             <Message variant={"alert-info mt-3"}>No Reviews</Message>
             <div className="mb-5 mb-md-3 bg-light p-3 shadow-sm rounded">
-              <strong>Admin Doe</strong>
+              <strong>Admin Thiendz</strong>
               <Rating />
-              <span>Jan 12 2021</span>
+              <span>Apr 1 2023</span>
               <div className="alert alert-info mt-3">
                 Comment
               </div>
