@@ -1,6 +1,7 @@
 import  express  from 'express';
 import asyncHandler from    'express-async-handler';
 import User from './../models/UserModels.js';
+import generateToken from '../utils/generateToken.js';
 
 const userRouter = express.Router()
 
@@ -11,14 +12,14 @@ userRouter.post("/login",
         const { email, password } = req.body
         const user = await User.findOne({
             email
-        })
+        });
         if (user && ( user.matchPassword(password))) {
             res.json({
                 _id: user._id,
                 name: user.name,
                 email: user.email,
                 isAdmin: user.isAdmin,
-                token: null,
+                token: generateToken(user._id),
                 createdAt: user.createdAt,
             })
         } else {
@@ -27,5 +28,8 @@ userRouter.post("/login",
         }
     }
 ))
+
+
+//
 
 export  default userRouter
