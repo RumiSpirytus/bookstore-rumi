@@ -2,14 +2,17 @@ import React, { useEffect } from "react";
 import Header from "./../components/Header";
 import { Link } from "react-router-dom";
 import { addToCart } from "../Redux/Actions/cartActions";
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 
 const CartScreen = ({match, location}) => {
   window.scrollTo(0, 0);
+  const dispatch = useDispatch();
   const productId = match.params.id
   const qty = location.search ? Number(location.search.split("=")[1]): 1
 
-  const dispatch = useDispatch();
+  const cart = useSelector((state) => state.cart)
+  const {cartItems } = cart
+  
   useEffect(() => {
     if(productId){
       dispatch(addToCart(productId, qty))
@@ -21,7 +24,9 @@ const CartScreen = ({match, location}) => {
       <Header />
       {/* Cart */}
       <div className="container">
-        {/* <div className=" alert alert-info text-center mt-3">
+        {
+          cartItems.length === 0 ? (
+            <div className=" alert alert-info text-center mt-3">
           Your cart is empty
           <Link
             className="btn btn-success mx-5 px-5 py-3"
@@ -32,8 +37,12 @@ const CartScreen = ({match, location}) => {
           >
             SHOPPING NOW
           </Link>
-        </div> */}
-        <div className=" alert alert-info text-center mt-3">
+        </div>
+          )
+          : 
+          (
+            <>
+              <div className=" alert alert-info text-center mt-3">
           Total Cart Products
           <Link className="text-success mx-2" to="/cart">
             (4)
@@ -84,9 +93,12 @@ const CartScreen = ({match, location}) => {
             </button>
           </div>
         </div>
-      </div>
+      
+            </>
+          )
+        }</div>
+        
     </>
   );
-};
-
+      }
 export default CartScreen;
