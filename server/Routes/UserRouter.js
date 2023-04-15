@@ -35,6 +35,7 @@ userRouter.post("/login",
 userRouter.get("/profile",protect,
  asyncHandler(
     async(req, res) => {
+        // res.send("user profile")
         const user = await User.findById(req.user._id)
         if (user) {
             res.json({
