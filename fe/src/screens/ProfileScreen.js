@@ -11,8 +11,9 @@ const ProfileScreen = () => {
   window.scrollTo(0, 0);
 
   const dispatch = useDispatch();
-  const userLogin = useSelector((state) => state.userLogin);
-  const {userInfo} = userLogin;
+
+  const userLogin = useSelector((state) => state.userLogin)
+  const{userInfo} = userLogin;
 
   useEffect(() => {
     dispatch(getUserDetails("profile"))
@@ -31,11 +32,18 @@ const ProfileScreen = () => {
                   <img src="./images/user.png" alt="userprofileimage" />
                 </div>
                 <div className="author-card-details col-md-7">
-                  <h5 className="author-card-name mb-2">
+                {/* {
+                      userInfo ? 
+                      (<h5 className="author-card-name mb-2">
                     <strong>{userInfo.name}</strong>
+                  </h5>):
+                  (<h5>Hello</h5>)
+                    } */}
+                  <h5 className="author-card-name mb-2">
+                    <strong>Hello, {userInfo.name}</strong>
                   </h5>
                   <span className="author-card-position">
-                    <>Joined {moment(userInfo.createdAt).format("LL")}</>
+                    <>Joined {moment(userInfo.createdAt).format('LL')}</>
                   </span>
                 </div>
               </div>

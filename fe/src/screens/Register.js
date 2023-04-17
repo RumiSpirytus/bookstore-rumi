@@ -4,7 +4,7 @@ import Header from "./../components/Header";
 import { useDispatch, useSelector } from "react-redux";
 import Loading from "../components/LoadingError/Loading";
 import Message from "../components/LoadingError/Error";
-import { register } from "../Redux/Actions/userActions";
+import { register } from "../Redux/Actions/userActions.js";
 
 const Register = ({location, history}) => {
   window.scrollTo(0, 0);
