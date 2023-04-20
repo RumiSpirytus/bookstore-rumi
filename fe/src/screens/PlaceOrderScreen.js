@@ -1,12 +1,14 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
 import Header from "./../components/Header";
 import { useDispatch, useSelector } from "react-redux";
 import ShippingScreen from './ShippingScreen';
 import { saveShippingAddress } from './../Redux/Actions/cartActions';
 import Message from "../components/LoadingError/Error";
+import { ORDER_CREATE_REQUEST, ORDER_CREATE_RESET } from './../Redux/Constants/OrderConstants';
+import { createOrder } from './../Redux/Actions/OrderActions';
 
-const PlaceOrderScreen = () => {
+const PlaceOrderScreen = ({history}) => {
   window.scrollTo(0, 0);
 
   const dispatch = useDispatch()
@@ -23,7 +25,7 @@ const PlaceOrderScreen = () => {
     cart.cartItems.reduce((acc, item) => acc + item.price*item.qty, 0)
   )
 
-  cart.shippingPrice = addDecimals(cart.itemsPrice > 100 ? 0 : 100)
+  cart.shippingPrice = addDecimals(cart.itemsPrice > 100 ? Number((0.03*cart.itemsPrice).toFixed(2))  : 0)
   cart.taxPrice = addDecimals(Number((0.15*cart.itemsPrice).toFixed(2)))
   cart.totalPrice = (
     Number(cart.itemsPrice) + 
@@ -31,8 +33,29 @@ const PlaceOrderScreen = () => {
     Number(cart.taxPrice)
   ).toFixed(2)
 
+    const orderCreate = useSelector((state) => state.orderCreate)
+    const {order, success, error} = orderCreate
+
+    useEffect(() => {
+      if(success){
+        history.push(`/order/${order._id}`)
+        dispatch({type:ORDER_CREATE_RESET})
+      }
+    }, [history, dispatch, success, order])
+  
   const placeOrderHandler = (e) => {
-    e.preventDefault();
+    dispatch(
+      createOrder({
+      orderItems: cart.cartItems,
+      shippingAddress: cart.shippingAddress,
+      paymentMethod: cart.paymentMethod,
+      itemsPrice: cart.itemsPrice,
+      shippingPrice: cart.shippingPrice,
+      taxPrice: cart.taxPrice,
+      totalPrice: cart.totalPrice,
+    })
+    )
+    
   };
 
   return (
@@ -170,10 +193,14 @@ const PlaceOrderScreen = () => {
             </button>
               )
             }
-            
-            {/* <div className="my-3 col-12">
+            {
+              error && (
+                 <div className="my-3 col-12">
                 <Message variant="alert-danger">{error}</Message>
-              </div> */}
+              </div> 
+              )
+            }
+            {}
           </div>
         </div>
       </div>

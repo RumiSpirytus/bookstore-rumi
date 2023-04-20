@@ -1,6 +1,7 @@
 import  express, { request }  from 'express';
 import asyncHandler from    'express-async-handler';
 import protect from '../Middleware/AuthMiddleware.js';
+import Order from '../models/OrderModel.js';
 
 const orderRouter = express.Router()
 
@@ -15,7 +16,7 @@ orderRouter.post("/", protect,
                 taxPrice, 
                 shippingPrice,
                 totalPrice 
-        } = req.body
+        } = req.body;
         if (orderItems && orderItems.length === 0) {
             res.status(400)
             throw new Error("No order items")
@@ -23,6 +24,7 @@ orderRouter.post("/", protect,
         } else {
             const order = new Order({
                 orderItems,
+                user:req.user._id,
                 shippingAddress, 
                 paymentMethod, 
                 itemsPrice, 

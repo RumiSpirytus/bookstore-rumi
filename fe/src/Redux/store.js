@@ -5,7 +5,7 @@ import { composeWithDevTools } from "redux-devtools-extension"
 import { productDetailsReducer, productListReducer } from "./Reducers/ProductReducers";
 import { cartReducer } from "./Reducers/CartReducers";
 import { userDetailsReducer, userLoginReducer, userRegisterReducer, userUpdateProfileReducer } from "./Reducers/userReducers";
-
+import { orderCreateReducer } from "./Reducers/OrderReducers";
 
 const reducers = combineReducers({
     productList : productListReducer,
@@ -15,6 +15,7 @@ const reducers = combineReducers({
     userRegister: userRegisterReducer,
     userDetails: userDetailsReducer,
     userUpdateProfile: userUpdateProfileReducer,
+    orderCreate: orderCreateReducer,
 })
 
 const cartItemsFromLocalStorage = localStorage.getItem('cartItems')
@@ -41,7 +42,10 @@ const initialState = {
     }
 }
 
-const middleWare = [thunk]
+// const middleWare = [thunk]
+const middleWare = process.env.NODE_ENV !== 'production' ?
+  [require('redux-immutable-state-invariant').default(), thunk] :
+  [thunk];
 
 const store = configureStore(
     {reducer: reducers},

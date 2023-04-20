@@ -1,6 +1,6 @@
 import mongoose from "mongoose";
 
-const userSchema = mongoose.Schema({
+const orderSchema = mongoose.Schema({
     user: {
         type:mongoose.Schema.Types.ObjectId,
         required: true,
@@ -73,4 +73,4 @@ const userSchema = mongoose.Schema({
 )
 const Order = mongoose.model("Order", orderSchema)
 
-export default User
+export default Order
