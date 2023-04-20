@@ -3,7 +3,7 @@ import mongoose from "mongoose";
 const userSchema = mongoose.Schema({
     user: {
         type:mongoose.Schema.Types.ObjectId,
-        require: true,
+        required: true,
         ref: "User",
     },
     orderItems: [
@@ -13,7 +13,7 @@ const userSchema = mongoose.Schema({
         price: {type: Number, require: true},
         product: {
             type:mongoose.Schema.Types.ObjectId,
-            require: true,
+            required: true,
             ref: "User",
         },},
     ],
@@ -25,7 +25,7 @@ const userSchema = mongoose.Schema({
     },
     paymentMethod: {
         type: String,
-        require: true,
+        required: true,
         default: "Paypal", 
     },
     paymentResults: {
@@ -36,22 +36,22 @@ const userSchema = mongoose.Schema({
     },
     taxPrice: {
         type: String, 
-        require: true,
+        required: true,
         default: 0.0,
     },
     shippingPrice: {
         type: Number,
-        require: true, 
+        required: true, 
         default: 0.0,
     },
     totalPrice: {
         type: Number,
-        require: true, 
+        required: true, 
         default: 0.0,
     },
     isPaid: {
         type: Boolean,
-        require: true,
+        required: true,
         default: false,
     },
     paidAt: {
@@ -59,7 +59,7 @@ const userSchema = mongoose.Schema({
     },
     isDelivered: {
         type: Boolean,
-        require: true,
+        required: true,
         default: false,
     },
     deliveredAt: {
