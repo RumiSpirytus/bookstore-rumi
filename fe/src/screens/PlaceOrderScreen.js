@@ -109,9 +109,10 @@ const PlaceOrderScreen = ({history}) => {
                   <strong>Deliver to</strong>
                 </h5>
                 <p>
-                  Address: {cart.shippingAddress.city}, {""} {
-                    cart.shippingAddress.address.postalCode
-                  }
+                  Address: {cart.shippingAddress.city}, {""} 
+                    {cart.shippingAddress.address},{""}
+                    {cart.shippingAddress.address.postalCode}
+                  
                 </p>
               </div>
             </div>
