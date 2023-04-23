@@ -2,10 +2,8 @@ import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
 import Header from "./../components/Header";
 import { useDispatch, useSelector } from "react-redux";
-import ShippingScreen from './ShippingScreen';
-import { saveShippingAddress } from './../Redux/Actions/cartActions';
 import Message from "../components/LoadingError/Error";
-import { ORDER_CREATE_REQUEST, ORDER_CREATE_RESET } from './../Redux/Constants/OrderConstants';
+import {  ORDER_CREATE_RESET } from './../Redux/Constants/OrderConstants';
 import { createOrder } from './../Redux/Actions/OrderActions';
 
 const PlaceOrderScreen = ({history}) => {

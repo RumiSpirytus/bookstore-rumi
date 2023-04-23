@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import Header from "./../components/Header";
 import { PayPalButton } from "react-paypal-button-v2";
 import { useDispatch, useSelector } from "react-redux";
-import { getOrderDetails } from "../Redux/Actions/OrderActions";
+import { getOrderDetails } from "../Redux/Actions/OrderActions.js";
 import Loading from "../components/LoadingError/Loading";
 import Message from "../components/LoadingError/Error";
 import moment from 'moment';
@@ -24,8 +24,6 @@ const OrderScreen = ({match}) => {
     order.orderItems.reduce((acc, item) => acc + item.price*item.qty, 0)
   )
   }
-
-  
 
   useEffect(() => {
     dispatch(getOrderDetails(orderId))
