@@ -20,9 +20,11 @@ const reducers = combineReducers({
     orderPay: orderPayReducer,
 })
 
-const cartItemsFromLocalStorage = localStorage.getItem('cartItems')
-? JSON.parse(localStorage.getItem('cartItems'))
-:[]
+const cartItemsFromLocalStorage = localStorage.getItem("cartItems")
+ ? (JSON.parse(localStorage.getItem('cartItems')))
+ : [];
+
+// const cartItemsFromLocalStorage = JSON.parse(localStorage.getItem('cartItems'));
 
 //login
 const userInfoFromLocalStorage = localStorage.getItem('userInfo')

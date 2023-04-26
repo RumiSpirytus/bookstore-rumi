@@ -70,7 +70,7 @@ orderRouter.get("/:id/pay", protect,
             order.paymentResult = {
                 id: req.body.id,
                 status: req.body.status,
-                update: req.body.update_time,
+                update_time: req.body.update_time,
                 email_address: req.body.email_address,
             }
             const updateOrder = await order.save()
