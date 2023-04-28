@@ -38,7 +38,17 @@ orderRouter.post("/", protect,
         }
     })
 
-)
+);
+
+// user login orders
+orderRouter.get("/", protect,
+ asyncHandler(
+    async(req, res) => {
+        const order = await Order.find({user: req.user._id}).sort({_id: -1})
+        res.json(order);
+    })
+
+);
 
 // get order by id
 orderRouter.get("/:id", protect,
