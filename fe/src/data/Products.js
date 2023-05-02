@@ -1,5 +1,6 @@
 const products = [
   {
+    _id:"1",
     name: "Ánh trăng đêm hè",
     image: "/img/bia-sach1.jpg",
     description:
@@ -10,6 +11,7 @@ const products = [
     numReviews: 4,
   },
   {
+    _id:"2",
     name: "Mớ hỗn độn",
     image: "/img/bia-sach2.jpg",
     description:
@@ -20,6 +22,7 @@ const products = [
     numReviews: 2,
   },
   {
+    _id:"3",
     name: "Ai cũng từng là con nít",
     image: "/img/bia-sach3.jpg",
     description:
@@ -30,6 +33,7 @@ const products = [
     numReviews: 3,
   },
   {
+    _id:"4",
     name: "Thời gian tươi đẹp",
     image: "/img/bia-sach4.jpg",
     description:
@@ -40,6 +44,7 @@ const products = [
     numReviews: 9,
   },
   {
+    _id:"5",
     name: "Đố vui toán học",
     image: "/img/bia-sach5.jpg",
     description:
@@ -50,6 +55,7 @@ const products = [
     numReviews: 2,
   },
   {
+    _id:"6",
     name: "Những loài hoa có gai",
     image: "/img/bia-sach6.jpg",
     description:

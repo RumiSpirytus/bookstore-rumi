@@ -3,18 +3,18 @@ import { USER_DETAILS_FAIL, USER_DETAILS_REQUEST, USER_DETAILS_RESET, USER_DETAI
 //login 
 export const userLoginReducer = (state = {}, action) => {
     switch (action.type) {
-        case USER_LOGIN_REQUEST:
-            return { loading: true}
-        case USER_LOGIN_SUCCESS:
-            return { loading: false, userInfo: action.payload}
-        case USER_LOGIN_FAIL:
-            return { loading: false, error: action.payload}    
-        case USER_LOGOUT:
-            return {}
-        default:
-            return state;
+      case USER_LOGIN_REQUEST:
+        return { loading: true };
+      case USER_LOGIN_SUCCESS:
+        return { loading: false, userInfo: action.payload };
+      case USER_LOGIN_FAIL:
+        return { loading: false, error: action.payload };
+      case USER_LOGOUT:
+        return {};
+      default:
+        return state;
     }
-}
+  };
 
 // register
 export const userRegisterReducer = (state = {}, action) => {

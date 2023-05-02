@@ -6,12 +6,30 @@ import protect from './../Middleware/AuthMiddleware.js';
 const productRoute = express.Router()
 
 //Get all products
-productRoute.get('/', asyncHandler(
-    async(req, res) => {
-        const products = await Product.find({})
-        res.json(products)
-    }
-))
+productRoute.get(
+  "/",
+  asyncHandler(async (req, res) => {
+    const pageSize = 3;
+    const page = Number(req.query.pageNumber) || 1;
+    const keyword = req.query.keyword
+      ? {
+          name: {
+            $regex: req.query.keyword,
+            $options: "i",
+          },
+        }
+      : {};
+    const count = await Product.countDocuments({ ...keyword });
+    
+    const products = await Product.find({ ...keyword })
+      .limit(pageSize)
+      .skip(pageSize * (page - 1))
+      .sort({ _id: -1 });
+    const pages = Math.ceil(count / pageSize)
+    res.json( {products, page, pages });
+  })
+);
+
 // o postman se thay id do mongo tao ra
 //get product, single
 productRoute.get('/:id', asyncHandler(

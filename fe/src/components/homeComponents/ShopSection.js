@@ -7,15 +7,16 @@ import { listProduct } from "../../Redux/Actions/ProductActions";
 import Loading from './../LoadingError/Loading';
 import Message from "../LoadingError/Error.js";
 //fetch products
-const ShopSection = () => {
-  const dispatch = useDispatch()
+const ShopSection = (props) => {
+  const { keyword, pagenumber } = props;
+  const dispatch = useDispatch();
 
-const productList = useSelector((state) => state.productList)
-const {loading, error, products } = productList
+  const productList = useSelector((state) => state.productList);
+  const { loading, error, products, page, pages } = productList;
 
   useEffect(() => {
-    dispatch(listProduct());
-  }, [dispatch]);
+    dispatch(listProduct(keyword, pagenumber));
+  }, [dispatch, keyword, pagenumber]);
   return (
     <>
       <div className="container">
@@ -27,44 +28,47 @@ const {loading, error, products } = productList
                   <div className="mb-5">
                     <Loading />
                   </div>
-                  ) : error ? (
+                ) : error ? (
                   <Message variant="alert-danger">{error}</Message>
-                    ): (
-                    <>
+                ) : (
+                  <>
                     {products.map((product) => (
-                  <div
-                    className="shop col-lg-4 col-md-6 col-sm-6"
-                    key={product._id}
-                  >
-                    <div className="border-product">
-                      <Link to={`/products/${product._id}`}>
-                        <div className="shopBack">
-                          <img src={product.image} alt={product.name} />
-                        </div>
-                      </Link>
-
-                      <div className="shoptext">
-                        <p>
+                      <div
+                        className="shop col-lg-4 col-md-6 col-sm-6"
+                        key={product._id}
+                      >
+                        <div className="border-product">
                           <Link to={`/products/${product._id}`}>
-                            {product.name}
+                            <div className="shopBack">
+                              <img src={product.image} alt={product.name} />
+                            </div>
                           </Link>
-                        </p>
 
-                        <Rating
-                          value={product.rating}
-                          text={`${product.numReviews} reviews`}
-                        />
-                        <h3>${product.price}</h3>
+                          <div className="shoptext">
+                            <p>
+                              <Link to={`/products/${product._id}`}>
+                                {product.name}
+                              </Link>
+                            </p>
+
+                            <Rating
+                              value={product.rating}
+                              text={`${product.numReviews} reviews`}
+                            />
+                            <h3>${product.price}</h3>
+                          </div>
+                        </div>
                       </div>
-                    </div>
-                  </div>
-                ))}
-                    </>
-                  )
-                }
-                
+                    ))}
+                  </>
+                )}
+
                 {/* Pagination */}
-                <Pagination />
+                <Pagination
+                  pages={pages}
+                  page={page}
+                  keyword={keyword ? keyword : ""}
+                />
               </div>
             </div>
           </div>

@@ -29,9 +29,9 @@ const cartItemsFromLocalStorage = localStorage.getItem("cartItems")
 // const cartItemsFromLocalStorage = JSON.parse(localStorage.getItem('cartItems'));
 
 //login
-const userInfoFromLocalStorage = localStorage.getItem('userInfo')
-? JSON.parse(localStorage.getItem('userInfo'))
-:null;
+const userInfoFromLocalStorage = localStorage.getItem("userInfo")
+  ? JSON.parse(localStorage.getItem("userInfo"))
+  : null;
 
 //shippingAdd information
 const shippingAddressFromLocalStorage = localStorage.getItem('shippingAddress')
@@ -40,18 +40,16 @@ const shippingAddressFromLocalStorage = localStorage.getItem('shippingAddress')
 
 const initialState = {
     cart: {
-        cartItems: cartItemsFromLocalStorage,
-        shippingAddress: shippingAddressFromLocalStorage,
+      cartItems: cartItemsFromLocalStorage,
+      shippingAddress: shippingAddressFromLocalStorage,
     },
-    userLogin: {
-        userInfo: userInfoFromLocalStorage
-    }
-}
+    userLogin: { userInfo: userInfoFromLocalStorage },
+  };
 
-// const middleWare = [thunk]
-const middleWare = process.env.NODE_ENV !== 'production' ?
-  [require('redux-immutable-state-invariant').default(), thunk] :
-  [thunk];
+const middleWare = [thunk]
+// const middleWare = process.env.NODE_ENV !== 'production' ?
+//   [require('redux-immutable-state-invariant').default(), thunk] :
+//   [thunk];
 
 const store = configureStore(
     {reducer: reducers},

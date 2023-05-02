@@ -12,7 +12,7 @@ ImportData.post(
     "/user",
     asyncHandler(async (req, res) => {
         // de {} thi filter k loc nen dung deleteMany, k co remove nen k dung duoc - rumi
-        await User.deleteMany({})
+        await User.remove({})
         const importUser = await User.insertMany(users);
         res.send({importUser});
     })
