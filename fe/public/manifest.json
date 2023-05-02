@@ -3,17 +3,17 @@
   "name": "BookShop E-commerce",
   "icons": [
     {
-      "src": "/img/logo4.jpg",
+      "src": "/img/logo4.png",
       "sizes": "90x90 32x32 24x24 16x16",
       "type": "image/x-icon"
     },
     {
-      "src": "/img/logo4.jpg",
+      "src": "/img/logo4.png",
       "type": "image/png",
       "sizes": "300x300"
     },
     {
-      "src": "/img/logo4.jpg",
+      "src": "/img/logo4.png",
       "type": "image/png",
       "sizes": "512x512"
     }

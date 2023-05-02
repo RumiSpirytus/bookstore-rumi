@@ -1,10 +1,10 @@
 import React from "react";
-import Loading from './../LoadingError/Loading';
-import Message from './../LoadingError/Error';
+import Loading from '../LoadingError/Loading';
+import Message from '../LoadingError/Error';
 import { Link } from 'react-router-dom';
-import { moment } from 'moment';
+import  moment  from 'moment';
 const Orders = (props) => {
-  const {loading, error, orders}  = props
+  const {loading, error, orders}  = props;
   return (
     <div className=" d-flex justify-content-center align-items-center flex-column">
       {
@@ -42,26 +42,24 @@ const Orders = (props) => {
             </tr>
           </thead>
           <tbody>
-            {
-              orders.map((order) => (
-                <tr className={`${order.isPaid ? "alert-success": "alert-danger" }`} key={order._id}>
-              <td>
-                <a href={`/orders/${order._id}`} className="link">
-                  {order._id}
-                </a>
-              </td>
-              <td>{order.isPaid ? <>Paid</> : <>Not Paid</>}</td>
+          {orders.map((order) => (
+                    <tr
+                      className={`${ order.isPaid ? "alert-success" : "alert-danger"}`}
+                      key={order._id}
+                    >
+                      <td>
+                        <a href={`/order/${order._id}`} className="link"> {order._id}
+                        </a>
+                      </td>
+                      <td>{order.isPaid ? <>Paid</> : <>Not Paid</>}</td>
                       <td>
                         {order.isPaid
                           ? moment(order.paidAt).calendar()
                           : moment(order.createdAt).calendar()}
                       </td>
-              <td>${order.totalPrice}</td>
-            </tr>
-              ))
-            }
-            
-
+                      <td>${order.totalPrice}</td>
+                    </tr>
+                  ))}
           </tbody>
         </table>
       </div>
