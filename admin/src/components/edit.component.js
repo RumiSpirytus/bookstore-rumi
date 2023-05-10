@@ -9,8 +9,8 @@ export default class Edit extends Component {
         this.onChangeName = this.onChangeName.bind(this);
         this.onChangeImage = this.onChangeImage.bind(this);
         this.onChangeDescription = this.onChangeDescription.bind(this);
-        this.onChangeRatings = this.onChangeRatings.bind(this);
-        this.onChangeNumOfReviews = this.onChangeNumOfReviews.bind(this);
+        // this.onChangeRatings = this.onChangeRatings.bind(this);
+        // this.onChangeNumOfReviews = this.onChangeNumOfReviews.bind(this);
         this.onChangePrice = this.onChangePrice.bind(this);
         this.onChangeCountInStock = this.onChangeCountInStock.bind(this);
         this.onSubmit = this.onSubmit.bind(this);
@@ -19,8 +19,8 @@ export default class Edit extends Component {
             name: '',
             image: '',
             description: '',
-            ratings: 0,
-            numOfReviews: 0,
+            // ratings: 0,
+            // numOfReviews: 0,
             price: 0,
             countInStock: 0,
             redirect: false
@@ -34,8 +34,8 @@ export default class Edit extends Component {
                     name: response.data.name,
                     image: response.data.image,
                     description: response.data.description,
-                    ratings: response.data.ratings,
-                    numOfReviews: response.data.numOfReviews,
+                    // ratings: response.data.ratings,
+                    // numOfReviews: response.data.numOfReviews,
                     price: response.data.price,
                     countInStock: response.data.countInStock
                 });
@@ -63,17 +63,17 @@ export default class Edit extends Component {
         });
     }
 
-    onChangeRatings(e) {
-        this.setState({
-            ratings: e.target.value
-        });
-    }
+    // onChangeRatings(e) {
+    //     this.setState({
+    //         ratings: e.target.value
+    //     });
+    // }
 
-    onChangeNumOfReviews(e) {
-        this.setState({
-            numOfReviews: e.target.value
-        });
-    }
+    // onChangeNumOfReviews(e) {
+    //     this.setState({
+    //         numOfReviews: e.target.value
+    //     });
+    // }
 
     onChangePrice(e) {
         this.setState({
@@ -94,8 +94,8 @@ export default class Edit extends Component {
             name: this.state.name,
             image: this.state.image,
             description: this.state.description,
-            ratings: this.state.ratings,
-            numOfReviews: this.state.numOfReviews,
+            // ratings: this.state.ratings,
+            // numOfReviews: this.state.numOfReviews,
             price: this.state.price,
             countInStock: this.state.countInStock
         };
@@ -108,8 +108,8 @@ export default class Edit extends Component {
                     name: res.data.name,
                     image: res.data.image,
                     description: res.data.description,
-                    ratings: res.data.ratings,
-                    numOfReviews: res.data.numOfReviews,
+                    // ratings: res.data.ratings,
+                    // numOfReviews: res.data.numOfReviews,
                     price: res.data.price,
                     countInStock: res.data.countInStock
                 });
@@ -166,7 +166,7 @@ export default class Edit extends Component {
                             style={{ width: '300px' }}
                         />
                     </div>
-                    <div className="form-group">
+                    {/* <div className="form-group">
                         <label>Ratings: </label>
                         <input
                             type="number"
@@ -190,7 +190,7 @@ export default class Edit extends Component {
                             required
                             style={{ width: '300px' }}
                         />
-                    </div>
+                    </div> */}
                     <div className="form-group">
                         <label>Price: </label>
                         <input

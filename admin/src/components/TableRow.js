@@ -45,8 +45,8 @@ class TableRow extends Component {
         <td style={{ maxWidth: '200px', overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' }}>
           {this.props.obj.description}
         </td>
-        <td>{this.props.obj.ratings}</td>
-        <td>{this.props.obj.numOfReviews}</td>
+        {/* <td>{this.props.obj.ratings}</td>
+        <td>{this.props.obj.numOfReviews}</td> */}
         <td>{this.props.obj.price}</td>
         <td>{this.props.obj.countInStock}</td>
         <td>

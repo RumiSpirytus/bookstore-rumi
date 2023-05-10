@@ -9,8 +9,8 @@ class Create extends Component {
     this.onChangeName = this.onChangeName.bind(this);
     this.onChangeImage = this.onChangeImage.bind(this);
     this.onChangeDescription = this.onChangeDescription.bind(this);
-    this.onChangeRatings = this.onChangeRatings.bind(this);
-    this.onChangeNumOfReviews = this.onChangeNumOfReviews.bind(this);
+    // this.onChangeRatings = this.onChangeRatings.bind(this);
+    // this.onChangeNumOfReviews = this.onChangeNumOfReviews.bind(this);
     this.onChangePrice = this.onChangePrice.bind(this);
     this.onChangeCountInStock = this.onChangeCountInStock.bind(this);
     this.onSubmit = this.onSubmit.bind(this);
@@ -19,8 +19,8 @@ class Create extends Component {
       name: '',
       image: '',
       description: '',
-      ratings: 0,
-      numOfReviews: 0,
+      // ratings: 0,
+      // numOfReviews: 0,
       price: 0,
       countInStock: 0,
     };
@@ -44,17 +44,17 @@ class Create extends Component {
     });
   }
 
-  onChangeRatings(e) {
-    this.setState({
-      ratings: e.target.value,
-    });
-  }
+  // onChangeRatings(e) {
+  //   this.setState({
+  //     ratings: e.target.value,
+  //   });
+  // }
 
-  onChangeNumOfReviews(e) {
-    this.setState({
-      numOfReviews: e.target.value,
-    });
-  }
+  // onChangeNumOfReviews(e) {
+  //   this.setState({
+  //     numOfReviews: e.target.value,
+  //   });
+  // }
 
   onChangePrice(e) {
     this.setState({
@@ -75,8 +75,8 @@ class Create extends Component {
       name: this.state.name,
       image: this.state.image,
       description: this.state.description,
-      ratings: this.state.ratings,
-      numOfReviews: this.state.numOfReviews,
+      // ratings: this.state.ratings,
+      // numOfReviews: this.state.numOfReviews,
       price: this.state.price,
       countInStock: this.state.countInStock,
     };
@@ -94,8 +94,8 @@ class Create extends Component {
       name: '',
       image: '',
       description: '',
-      ratings: 0,
-      numOfReviews: 0,
+      // ratings: 0,
+      // numOfReviews: 0,
       price: 0,
       countInStock: 0,
     });
@@ -139,7 +139,7 @@ class Create extends Component {
                             onChange={this.onChangeDescription}
                         />
                     </div>
-                    <div className="form-group">
+                    {/* <div className="form-group">
                         <label htmlFor="ratings">Ratings:</label>
                         <input
                             type="number"
@@ -152,7 +152,7 @@ class Create extends Component {
                             value={this.state.ratings}
                             onChange={this.onChangeRatings}
                         />
-                    </div>
+                    </div> */}
                     <div className="form-group">
                         <label htmlFor="price">Price:</label>
                         <input
