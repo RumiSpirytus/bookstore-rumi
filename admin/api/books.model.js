@@ -13,14 +13,14 @@ let ProductSchema = new Schema({
     description: {
         type: String
     },
-    ratings: {
-        type: Number,
-        default: 0
-    },
-    numOfReviews: {
-        type: Number,
-        default: 0
-    },
+    // ratings: {
+    //     type: Number,
+    //     default: 0
+    // },
+    // numOfReviews: {
+    //     type: Number,
+    //     default: 0
+    // },
     price: {
         type: Number,
         required: true

@@ -48,8 +48,8 @@ export default class Index extends Component {
               <th>Name</th>
               <th>Image</th>
               <th>Description</th>
-              <th>Ratings</th>
-              <th>Number of Reviews</th>
+              {/* <th>Ratings</th>
+              <th>Number of Reviews</th> */}
               <th>Price</th>
               <th>Count in Stock</th>
               <th colSpan="2">Action</th>
