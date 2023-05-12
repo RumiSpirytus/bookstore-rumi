@@ -51,18 +51,21 @@ class Login extends Component {
 
         return (
             <div className="container mt-5">
-                <h2>Login</h2>
+                <h2>This website is for Rumi's admin only</h2>
                 {this.state.error && <div className="alert alert-danger">{this.state.error}</div>}
+                
                 <form onSubmit={this.handleSubmit}>
                 <div className="form-group">
                     <label>Email address</label>
-                    <input type="email" className="form-control" name="email" value={this.state.email} onChange={this.handleChange} required />
+                    <input type="email" class="input" className="form-control" name="email" value={this.state.email} onChange={this.handleChange} required />
                 </div>
                 <div className="form-group">
                     <label>Password</label>
                     <input type="password" className="form-control" name="password" value={this.state.password} onChange={this.handleChange} required />
                 </div>
+                <div className="btn-login-admin">
                 <button type="submit" className="btn btn-primary">Login</button>
+                </div>
                 </form>
             </div>
         );

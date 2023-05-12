@@ -60,7 +60,7 @@ class App extends Component {
                 ) : (
                   <li className="nav-item">
                     <Link to="/login" className="nav-link" style={{ marginRight: '30px' }}>
-                      Login
+                      
                     </Link>
                   </li>
                 )}

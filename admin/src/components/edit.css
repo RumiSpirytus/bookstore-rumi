@@ -1,3 +1,4 @@
+
 div {
     margin-top: 0px;
 }
@@ -6,40 +7,101 @@ h3 {
     margin: 0 auto;
     width: 25%;
 }
+h2 {
+    display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  margin-bottom: 20px;
+  color: rgb(205, 71, 210);
+}
 
 form {
     margin: 0 auto;
     width: 25%;
+    
 }
 
 .form-group {
+    position: relative;
     margin-bottom: 10px;
+    /* color: rgb(110, 103, 103); */
+    /* margin-bottom: -20px; */
+    font-size: 15px;
+}
+.form-control {
+    font-size: 1rem;
+    border-top: 0;
+    border-left: none;
+    border-right: none;
+    text-align: center;
+    outline: transparent;
+    /* border-color: rgb(191, 188, 188); */
 }
 
 label {
     display: block;
-    margin-bottom: 5px;
+    margin-bottom: 3%;
+    text-align: center;
+    color: rgb(176, 75, 179);
+    font-size: 15px;
+}
+.big-word{
+    width: 100%;
+    text-align: center;
+    font-size: 30px;
+    color: rgb(173, 97, 167);
+}
+.small-word{
+  text-align: center;
+  margin-top: 0px;
+  color: rgb(173, 97, 167);
 }
 
-input[type="text"],
+.input {
+  font-size: 1rem;
+  border-top: 0;
+  border-left: 0;
+  border-right: none;
+  text-align: center;
+  outline: transparent;
+  width: 100%;
+  margin-bottom: 10px;
+  /* border-color: #f0f0f0; */
+  background-color: #f0f0f0;
+}
+/* input[type="text"],
 textarea,
 input[type="number"] {
-    width: 300px;
-}
+    padding: 12px 20px;
+  font-size: 1rem;
+  border-top: 0;
+  border-left: 0;
+  border-right: none;
+  text-align: center;
+  outline: transparent;
+  width: 100%;
+  margin-bottom: 10px;
+  border-color: rgb(191, 188, 188);
+} */
 
 input[type="submit"] {
-    display: inline-block;
-    background-color: #007bff;
-    color: #fff;
+    display: block;
+    /* background-color: #007bff; */
     border: none;
     padding: 8px 16px;
     cursor: pointer;
+    text-align: center;
+    justify-content: space-between;
 }
 
-input[type="submit"]:hover {
+/* input[type="submit"]:hover {
     background-color: #0069d9;
 }
 
 input[type="submit"]:active {
     background-color: #005cbf;
+} */
+.btn-login-admin{
+    text-align: center;
 }
