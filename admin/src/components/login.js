@@ -50,7 +50,7 @@ class Login extends Component {
         }
 
         return (
-            <div className="container mt-5">
+            <div className="container mt-5" class="container">
                 <h2>This website is for Rumi's admin only</h2>
                 {this.state.error && <div className="alert alert-danger">{this.state.error}</div>}
                 
