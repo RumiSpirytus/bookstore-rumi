@@ -1,6 +1,7 @@
 .container {
     margin-top: 5%;
 }
+
 div {
     margin-top: 0px;
 }
@@ -9,13 +10,14 @@ h3 {
     margin: 0 auto;
     width: 25%;
 }
+
 h2 {
     display: flex;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
-  margin-bottom: 20px;
-  color: rgb(205, 71, 210);
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    margin-bottom: 20px;
+    color: rgb(205, 71, 210);
 }
 
 form {
@@ -31,6 +33,7 @@ form {
     /* margin-bottom: -20px; */
     font-size: 15px;
 }
+
 .form-control {
     font-size: 1rem;
     border-top: 0;
@@ -42,7 +45,7 @@ form {
     /* border-color: rgb(191, 188, 188); */
 }
 
-.form-control:focus{
+.form-control:focus {
     box-shadow: none;
 }
 
@@ -58,15 +61,15 @@ label {
 }
 
 .input {
-  font-size: 1rem;
-  border-top: 0;
-  border-left: 0;
-  border-right: none;
-  text-align: center;
-  outline: transparent;
-  width: 100%;
-  margin-bottom: 10px;
-  background-color: #f0f0f0;
+    font-size: 1rem;
+    border-top: 0;
+    border-left: 0;
+    border-right: none;
+    text-align: center;
+    outline: transparent;
+    width: 100%;
+    margin-bottom: 10px;
+    background-color: #f0f0f0;
 }
 
 input[type="submit"] {
@@ -77,7 +80,7 @@ input[type="submit"] {
     cursor: pointer;
     text-align: center;
     justify-content: space-between;
-    color: rgb(185, 74, 185);
+    color: white;
 }
 
 input[type="submit"]:hover {
@@ -87,10 +90,11 @@ input[type="submit"]:hover {
 /* input[type="submit"]:active {
     background-color: #005cbf;
 } */
-.btn-login-admin{
+.btn-login-admin {
     text-align: center;
     color: rgb(209, 89, 209);
 }
+
 .btn {
     color: white;
     background-color: rgb(200, 78, 182);

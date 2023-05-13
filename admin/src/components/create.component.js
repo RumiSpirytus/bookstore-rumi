@@ -101,45 +101,45 @@ class Create extends Component {
     });
   }
 
-    render() {
-        return (
-            <div className="create-form">
-                <h3>Add New Product</h3>
-                <form onSubmit={this.onSubmit}>
-                    <div className="form-group">
-                        <label htmlFor="name">Name:</label>
-                        <input
-                            type="text"
-                            id="name"
-                            className="form-control"
-                            required
-                            value={this.state.name}
-                            onChange={this.onChangeName}
-                        />
-                    </div>
-                    <div className="form-group">
-                        <label htmlFor="image">Image (URL):</label>
-                        <input
-                            type="text"
-                            id="image"
-                            className="form-control"
-                            required
-                            value={this.state.image}
-                            onChange={this.onChangeImage}
-                        />
-                    </div>
-                    <div className="form-group">
-                        <label htmlFor="description">Description:</label>
-                        <input
-                            type="text"
-                            id="description"
-                            className="form-control"
-                            required
-                            value={this.state.description}
-                            onChange={this.onChangeDescription}
-                        />
-                    </div>
-                    {/* <div className="form-group">
+  render() {
+    return (
+      <div className="create-form">
+        <h3 style={{ margin: '0 auto', width: '25%', marginLeft: '40%' }}>Add New Product</h3>
+        <form onSubmit={this.onSubmit} style={{ margin: '0 auto', width: '25%' }}>
+          <div className="form-group">
+            <label htmlFor="name">Name:</label>
+            <input
+              type="text"
+              id="name"
+              className="form-control"
+              required
+              value={this.state.name}
+              onChange={this.onChangeName}
+            />
+          </div>
+          <div className="form-group">
+            <label htmlFor="image">Image (URL):</label>
+            <input
+              type="text"
+              id="image"
+              className="form-control"
+              required
+              value={this.state.image}
+              onChange={this.onChangeImage}
+            />
+          </div>
+          <div className="form-group">
+            <label htmlFor="description">Description:</label>
+            <input
+              type="text"
+              id="description"
+              className="form-control"
+              required
+              value={this.state.description}
+              onChange={this.onChangeDescription}
+            />
+          </div>
+          {/* <div className="form-group">
                         <label htmlFor="ratings">Ratings:</label>
                         <input
                             type="number"
@@ -153,37 +153,37 @@ class Create extends Component {
                             onChange={this.onChangeRatings}
                         />
                     </div> */}
-                    <div className="form-group">
-                        <label htmlFor="price">Price:</label>
-                        <input
-                            type="number"
-                            id="price"
-                            className="form-control"
-                            required
-                            min={0}
-                            step={1}
-                            value={this.state.price}
-                            onChange={this.onChangePrice}
-                        />
-                    </div>
-                    <div className="form-group">
-                        <label htmlFor="countInStock">Count in Stock:</label>
-                        <input
-                            type="number"
-                            id="countInStock"
-                            className="form-control"
-                            required
-                            min={0}
-                            step={1}
-                            value={this.state.countInStock}
-                            onChange={this.onChangeCountInStock}
-                        />
-                    </div>
-                    <button type="submit" className="btn btn-primary">Add Product</button>
-                </form>
-            </div>
-        );
-    }
+          <div className="form-group">
+            <label htmlFor="price">Price:</label>
+            <input
+              type="number"
+              id="price"
+              className="form-control"
+              required
+              min={0}
+              step={1}
+              value={this.state.price}
+              onChange={this.onChangePrice}
+            />
+          </div>
+          <div className="form-group">
+            <label htmlFor="countInStock">Count in Stock:</label>
+            <input
+              type="number"
+              id="countInStock"
+              className="form-control"
+              required
+              min={0}
+              step={1}
+              value={this.state.countInStock}
+              onChange={this.onChangeCountInStock}
+            />
+          </div>
+          <button type="submit" className="btn btn-primary">Add Product</button>
+        </form>
+      </div>
+    );
+  }
 }
 export default withRouter(Create);
 
