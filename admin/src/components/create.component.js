@@ -103,9 +103,9 @@ class Create extends Component {
 
   render() {
     return (
-      <div className="create-form">
-        <h3 style={{ margin: '0 auto', width: '25%', marginLeft: '40%' }}>Add New Product</h3>
-        <form onSubmit={this.onSubmit} style={{ margin: '0 auto', width: '25%' }}>
+      <div className="create-form" >
+        <h3 style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }} >Add New Product</h3>
+        <form onSubmit={this.onSubmit} style={{ margin: '0 auto', width: '25%' }} >
           <div className="form-group">
             <label htmlFor="name">Name:</label>
             <input

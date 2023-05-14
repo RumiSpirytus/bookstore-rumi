@@ -131,39 +131,39 @@ export default class Edit extends Component {
         }
 
         return (
-            <div style={{ marginTop: 10 }}>
-                <h3 style={{ margin: '0 auto', width: '25%', marginLeft: '40%' }}>Update Product</h3>
+            <div className='edit-form'>
+                <h3 style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>Update Product</h3>
                 <form onSubmit={this.onSubmit} style={{ margin: '0 auto', width: '25%' }}>
                     <div className="form-group">
-                        <label style={{ marginLeft: '-25%' }}>Name: </label>
+                        <label>Name: </label>
                         <input
                             type="text"
                             className="form-control"
                             value={this.state.name}
                             onChange={this.onChangeName}
                             required
-                            style={{ width: '300px' }}
+
                         />
                     </div>
                     <div className="form-group">
-                        <label style={{ marginLeft: '-25%' }}>Image (URL): </label>
+                        <label>Image (URL): </label>
                         <input
                             type="text"
                             className="form-control"
                             value={this.state.image}
                             onChange={this.onChangeImage}
                             required
-                            style={{ width: '300px' }}
+
                         />
                     </div>
                     <div className="form-group">
-                        <label style={{ marginLeft: '-25%' }}>Description: </label>
+                        <label>Description: </label>
                         <textarea
                             className="form-control"
                             value={this.state.description}
                             onChange={this.onChangeDescription}
                             required
-                            style={{ width: '300px' }}
+
                         />
                     </div>
                     {/* <div className="form-group">
@@ -192,7 +192,7 @@ export default class Edit extends Component {
                         />
                     </div> */}
                     <div className="form-group">
-                        <label style={{ marginLeft: '-25%' }}>Price: </label>
+                        <label>Price: </label>
                         <input
                             type="number"
                             className="form-control"
@@ -201,11 +201,11 @@ export default class Edit extends Component {
                             min={0}
                             step={0.01}
                             required
-                            style={{ width: '300px' }}
+
                         />
                     </div>
                     <div className="form-group">
-                        <label style={{ marginLeft: '-25%' }}>Count in Stock: </label>
+                        <label>Count in Stock: </label>
                         <input
                             type="number"
                             className="form-control"
@@ -213,7 +213,7 @@ export default class Edit extends Component {
                             onChange={this.onChangeCountInStock}
                             min={0}
                             required
-                            style={{ width: '300px' }}
+
                         />
                     </div>
                     <div className="form-group">
